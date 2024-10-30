@@ -1,0 +1,1250 @@
+*{
+   margin: 0;
+   padding: 0;
+   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+   box-sizing: border-box;
+}
+:root{
+   scroll-behavior: smooth;
+}
+body{
+   background-color: #FAFAFA;
+}
+
+/*--------------------------------------------------------------
+# Alert
+--------------------------------------------------------------*/
+.alert{
+   position: fixed;
+   top: 25px;
+   left: 50%;
+   transform: translateX(-50%);
+   z-index: 1000000;
+   min-width: 250px;
+   align-items: center;
+   height: 50px;
+   border-radius: 0;
+   opacity: 0.7;
+   border: none;
+   color: #FAFAFA;
+   animation: fade-in ease-in-out 0.3s;
+}
+@keyframes fade-in{
+   from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-10%);
+   }
+   to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+   }
+}
+.alert p{
+   margin-top: 15px;
+}
+.alert button{
+   background: none;
+   border: none;
+   display: flex;
+   color: #FAFAFA;
+   align-items: center;
+   transition: .5s;
+   height: 25px;
+   font-size: 25px;
+   margin-right: -30px;
+   margin-left: 10px;
+}
+.alert-success{
+   background-color: #0CAC41;
+}
+.alert-danger{
+   background-color: #CC6414;
+}
+.alert-primary{
+   background-color: #0C58AC;
+}
+
+/*--------------------------------------------------------------
+# Pagination
+--------------------------------------------------------------*/
+.pagination .page-item a:focus{
+   border: 1px solid #CC6414;
+   box-shadow: 0 0 0 0.15rem #EBC8A8;
+}
+.pagination .buttons a{
+   background-color: #0C58AC;
+   color: #FAFAFA;
+   border: none;
+   transition: .3s;
+}
+.pagination .buttons a:hover{
+   background-color: #1C72CE;
+}
+.pagination .pages a,
+.pagination .pages span{
+   border: none;
+   color: #1B3B1A;
+   background-color: #FAFAFA;
+   font-weight: 600;
+}
+.pagination .pages a.active{
+   background-color: #CC6414;
+   color: #FAFAFA;
+}
+.buts{
+   color: #5D5D5D;
+}
+
+/*--------------------------------------------------------------
+# Override some default Bootstrap stylings
+--------------------------------------------------------------*/
+/* Dropdown menus */
+.dropdown-menu{
+   border-radius: 4px;
+   padding: 10px 0;
+   border: 0;
+   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(0, 0, 0, 0.15) 0px 0px 0px 1px;
+   background-color: #FAFAFA;
+}
+.dropdown-menu .dropdown-header{
+   text-align: center;
+   font-size: 15px;
+   padding: 10px 25px;
+}
+.header-nav .profile .dropdown-header h6 {
+   font-size: 18px;
+   margin-bottom: 0;
+   font-weight: 600;
+   color: #444444;
+}
+.dropdown-header span {
+   font-size: 14px;
+}
+.dropdown-item i {
+   margin-right: 10px;
+   font-size: 18px;
+   line-height: 0;
+}
+.dropdown-menu .dropdown-item{
+   padding: 10px;
+   margin-bottom: 7px;
+   color: #171717;
+   transition: .4s;
+}
+.dropdown-menu .dropdown-item:hover{
+   background-color: #EFEFEF;
+}
+/* Breadcrumbs and Search*/
+.pagetitle nav{
+   background-color: #EFEFEF;
+   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(0, 0, 0, 0.15) 0px 0px 0px 1px;
+   padding: 5px;
+}
+.pagetitle nav .navbar-toggler{
+   border: none;
+   font-size: 20px;
+}
+.pagetitle nav .navbar-toggler:focus{
+   box-shadow: none;
+}
+.breadcrumb {
+   font-size: 15px;
+   font-weight: 600;
+   padding: 10px;
+}
+.breadcrumb a {
+   color: #5D5D5D;
+   transition: 0.3s;
+   text-decoration: none;
+}
+.breadcrumb a:hover {
+   color: #1B3B1A;
+}
+.breadcrumb .breadcrumb-item::before {
+   color: #5D5D5D;
+}
+.breadcrumb .active {
+   color: #1B3B1A;
+   font-weight: 600;
+}
+@media (max-width: 550px){
+   .breadcrumb{
+   margin-left: 15px;
+   }
+}
+.search-bar{
+   min-width: 350px;
+   padding: 0 20px;
+}
+.search-bar form{
+   width: 100%;
+}
+.search-bar form input{
+   font-size: 16px;
+   color: #1B3B1A;
+   background-color: #FAFAFA;
+   border-radius: 0;
+   padding: 8px;
+   transition: 0.3s;
+   width: 100%;
+}
+.search-bar form .form-control:focus{
+   border: 1px solid #0C58AC;
+   box-shadow: 0 0 0 0.15rem #A8CBEB;
+   background-color: #FAFAFA;
+}
+.search-bar form button{
+   border: 0;
+   border-radius: 5px;
+   padding: 5px 5px;
+   margin-left: -40px;
+   background: transparent;
+}
+.search-bar form button i{
+   color: #1B3B1A;
+   font-size: 19px;
+}
+.search-sm form button{
+   margin-bottom: 7px;
+}
+.new .addnew{
+   background-color: #0C58AC;
+   text-decoration: none;
+   color: #FAFAFA;
+   border: none;
+   padding: 5px 15px 7px;
+   font-weight: 600;
+   transition: .3s;
+}
+.new .addnew:hover{
+   background-color: #1C72CE;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+.logo{
+   line-height: 1;
+   text-decoration: none;
+}
+@media(min-width: 1200px){
+   .logo{
+      width: 230px;
+   }
+}
+.logo img{
+   max-height: 30px;
+   margin-right: 6px;
+}
+.logo span{
+   font-size: 22px;
+   font-weight: 600;
+   color: #1B3B1A;
+}
+header{
+   transition: all 0.5s;
+   z-index: 997;
+   height: 60px;
+   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(0, 0, 0, 0.15) 0px 0px 0px 1px;
+   background-color: #EFEFEF;
+   padding-left: 20px;
+   /* Toggle Sidebar Button */
+   /* Search Bar */
+}
+header .toggle-sidebar-btn{
+   font-size: 27px;
+   padding-left: 10px;
+   cursor: pointer;
+   color: #1B3B1A;
+   transition: .3s;
+}
+header .toggle-sidebar-btn:hover{
+   color: #5D5D5D;
+}
+/*--------------------------------------------------------------
+# Header Nav
+--------------------------------------------------------------*/
+.header-nav ul {
+   list-style: none;
+}
+.header-nav>ul {
+   margin: 0;
+   padding: 0;
+}
+.header-nav .nav-profile .img-cont{
+   width: 45px;
+   height: 45px;
+   overflow: hidden;
+   border-radius: 50%;
+}
+.header-nav .nav-profile .img-cont img{
+   width: 100%;
+   height: 100%;
+}
+.header-nav .nav-profile span {
+   font-size: 18px;
+   font-weight: 600;
+}
+.header-nav .profile {
+   min-width: 240px;
+   padding-bottom: 0;
+   top: 8px !important;
+}
+
+/*--------------------------------------------------------------
+# Sidebar
+--------------------------------------------------------------*/
+.sidebar {
+   position: fixed;
+   top: 60px;
+   left: 0;
+   bottom: 0;
+   width: 250px;
+   z-index: 996;
+   transition: all 0.3s;
+   padding: 20px;
+   overflow-y: auto;
+   scrollbar-width: thin;
+   scrollbar-color: #aab7cf transparent;
+   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(0, 0, 0, 0.15) 0px 0px 0px 1px;
+   background-color: #EFEFEF;
+}
+@media (max-width: 1199px) {
+   .sidebar {
+      left: -250px;
+   }
+}
+.sidebar::-webkit-scrollbar {
+   width: 5px;
+   height: 8px;
+   background-color: #FAFAFA;
+}
+.sidebar::-webkit-scrollbar-thumb {
+   background-color: #aab7cf;
+}
+@media (min-width: 1200px) {
+   #main,
+   #footer {
+      margin-left: 250px;
+   }
+}
+@media (max-width: 1199px) {
+   .toggle-sidebar .sidebar {
+      left: 0;
+   }
+}
+@media (min-width: 1200px) {
+   .toggle-sidebar #main,
+   .toggle-sidebar #footer {
+      margin-left: 0;
+   }
+   .toggle-sidebar .sidebar {
+      left: -250px;
+   }
+}
+.sidebar-nav {
+   padding: 0;
+   margin: 0;
+   list-style: none;
+}
+.sidebar-nav li {
+   padding: 0;
+   margin: 0;
+   list-style: none;
+}
+.sidebar-nav .nav-item {
+   margin-bottom: 5px;
+}
+.sidebar-nav .nav-heading {
+   font-size: 11px;
+   text-transform: uppercase;
+   color: #1B3B1A;
+   font-weight: 600;
+   margin: 10px 0 5px 15px;
+}
+.sidebar-nav .nav-link {
+   display: flex;
+   align-items: center;
+   font-size: 15px;
+   font-weight: 700;
+   color: #1B3B1A;
+   transition: 0.3;
+   background: transparent;
+   border-radius: 0;
+   padding: 10px 15px;
+}
+.sidebar-nav .nav-link i {
+   font-size: 16px;
+   margin-right: 10px;
+   color: #1B3B1A;
+}
+.sidebar-nav .nav-link.collapsed {
+   color: #5D5D5D;
+   background: transparent;
+}
+.sidebar-nav .nav-link.collapsed i {
+   color: #5D5D5D;
+}
+.sidebar-nav .nav-link:hover {
+   color: #1B3B1A;
+   background: transparent;
+}
+.sidebar-nav .nav-link:hover i {
+   color: #1B3B1A;
+}
+.sidebar-nav .nav-link .bi-chevron-down {
+   margin-right: 0;
+   transition: transform 0.2s ease-in-out;
+   color: #FAFAFA;
+}
+.sidebar-nav .nav-link:not(.collapsed) .bi-chevron-down {
+   transform: rotate(180deg);
+}
+.sidebar-nav .nav-content {
+   padding: 5px 0 0 0;
+   margin: 0;
+   list-style: none;
+}
+.sidebar-nav .nav-content a {
+   display: flex;
+   align-items: center;
+   font-size: 14px;
+   font-weight: 600;
+   color: #1B3B1A;
+   transition: 0.3;
+   padding: 10px 0 10px 40px;
+   transition: 0.3s;
+}
+.sidebar-nav .nav-content a i {
+   font-size: 6px;
+   margin-right: 8px;
+   line-height: 0;
+   border-radius: 50%;
+}
+.sidebar-nav .nav-content a:hover,
+.sidebar-nav .nav-content a.active {
+   color: #1B3B1A;
+}
+.sidebar-nav .nav-content a.active i {
+   background-color: #1B3B1A;
+}
+
+/*--------------------------------------------------------------
+# Main
+--------------------------------------------------------------*/
+#main{
+   margin-top: 60px;
+   padding: 20px 30px;
+   transition: all 0.3s;
+}
+@media (max-width: 1199px){
+   #main{
+      padding: 20px;
+   }
+}
+@media (max-width: 550px){
+   #main{
+      padding-left: 10px;
+      padding-right: 10px;
+   }
+}
+
+/*--------------------------------------------------------------
+# Dashboard
+--------------------------------------------------------------*/
+.dashboard{
+   height: 100%;
+}
+.dashboard .card{
+   border-radius: 0;
+   background-color: #EFEFEF;
+   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(0, 0, 0, 0.15) 0px 0px 0px 1px;
+   border: none;
+}
+.dashboard a{
+   text-decoration: none;
+}
+.dashboard a .card:hover{
+   box-shadow: none;
+}
+.dashboard .card .card-header{
+   background-color: #CC6414;
+   border-radius: 0;
+   height: 37px;
+}
+.dashboard .card-nav .card-body{
+   height: 82.3px;
+}
+.dashboard .card-nav .card-header h6{
+   font-weight: 600;
+   color: #FAFAFA;
+}
+.dashboard .card-nav .card-body i{
+   font-size: 30px;
+   color: #0C58AC;
+}
+.dashboard .card-nav .card-body h1{
+   color: #1B3B1A;
+}
+
+/*--------------------------------------------------------------
+# Orders Page
+--------------------------------------------------------------*/
+.orders{
+   height: 100%;
+}
+.orders .card{
+   border-radius: 0;
+   background-color: #EFEFEF;
+   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(0, 0, 0, 0.15) 0px 0px 0px 1px;
+   border: none;
+}
+.orders .card .card-header{
+   background-color: #CC6414;
+   border-radius: 0;
+   color: #FAFAFA;
+}
+.orders .card-table{
+   overflow: auto;
+}
+.orders .card-table table{
+   width: 100%;
+}
+.orders .card-table table tr{
+   transition: .2s;
+   border: 1px solid #D4D4D4;
+}
+.orders table th, td{
+   white-space: nowrap;
+   color: #1B3B1A;
+}
+.orders table th{
+   background-color: #D4D4D4;
+   padding: 7px 15px;
+}
+.orders table td{
+   padding: 5px 15px;
+}
+.orders .card table .pro-img{
+   width: 60px;
+   height: 60px;
+   overflow: hidden;
+}
+.orders .card table .pro-img img{
+   width: 100%;
+   height: 100%;
+}
+.orders .card table td button{
+   border: none;
+   padding: 5px 15px;
+   transition: .3s;
+   font-weight: 600;
+   font-size: 15px;
+   background-color: #CC6414;
+   color: #FAFAFA;
+}
+.orders .card table td .waiting{
+   background-color: #0C58AC;
+   color: #FAFAFA;
+}
+.orders .card table td input{
+   border: none;
+   padding: 5px 15px;
+   transition: .3s;
+   font-weight: 600;
+   font-size: 15px;
+   background-color: #0CAC41;
+   color: #FAFAFA;
+}
+
+/*--------------------------------------------------------------
+# Products Page
+--------------------------------------------------------------*/
+.products{
+   height: 100%;
+}
+.products .card{
+   border-radius: 0;
+   background-color: #EFEFEF;
+   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(0, 0, 0, 0.15) 0px 0px 0px 1px;
+   border: none;
+}
+.products .card .card-header{
+   background-color: #CC6414;
+   border-radius: 0;
+   color: #FAFAFA;
+}
+.products .card-table{
+   overflow: auto;
+}
+.products .card-table table{
+   width: 100%;
+}
+.products .card-table table tr{
+   transition: .2s;
+   border: 1px solid #D4D4D4;
+}
+.products table th, td{
+   white-space: nowrap;
+   color: #1B3B1A;
+}
+.products table th{
+   background-color: #D4D4D4;
+   padding: 7px 15px;
+}
+.products table td{
+   padding: 5px 15px;
+}
+.products table td .desc{
+   width: 120px;
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+}
+.products table tr:hover{
+   background-color: #F5F5F5;
+}
+.products table td a{
+   text-decoration: none;
+   color: #1B3B1A;
+   font-size: 18px;
+}
+.products .card table .pro-img{
+   width: 60px;
+   height: 60px;
+   overflow: hidden;
+}
+.products .card table .pro-img img{
+   width: 100%;
+   height: 100%;
+}
+
+/*--------------------------------------------------------------
+# Sent Page
+--------------------------------------------------------------*/
+.sent{
+   height: 100%;
+}
+.sent .card{
+   border-radius: 0;
+   background-color: #EFEFEF;
+   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(0, 0, 0, 0.15) 0px 0px 0px 1px;
+   border: none;
+}
+.sent .card .card-header{
+   background-color: #CC6414;
+   border-radius: 0;
+   color: #FAFAFA;
+}
+.sent .card .card-header p{
+   color: #FAFAFA;
+}
+.sent .card input{
+   border-radius: 0;
+   background-color: #FAFAFA;
+}
+.sent .card input:focus{
+   border: 1px solid #0C58AC;
+   box-shadow: 0 0 0 0.15rem #a8cbeb;
+}
+.sent .card input[type=checkbox]:checked{
+   background-color: #0C58AC;
+}
+.sent .card-table{
+   overflow: auto;
+}
+.sent .card-table table{
+   width: 100%;
+}
+.sent .card-table table tr{
+   transition: .2s;
+   border: 1px solid #D4D4D4;
+}
+.sent table tr:hover{
+   background-color: #F5F5F5;
+}
+.sent table th, td{
+   white-space: nowrap;
+   color: #1B3B1A;
+}
+.sent table th{
+   background-color: #D4D4D4;
+   padding: 7px 15px;
+}
+.sent table th a{
+   text-decoration: none;
+   color: #1B3B1A;
+}
+.sent table td{
+   padding: 10px 15px;
+}
+.sent table td a{
+   text-decoration: none;
+   color: #1B3B1A;
+   font-size: 18px;
+   padding: 10px 90px 10px 15px;
+}
+.sent .notif table td a{
+   padding: 10px 15px;
+}
+@media (max-width: 768px){
+   .sent table td a{
+      padding: 10px 15px
+   }
+}
+
+/*--------------------------------------------------------------
+# Customers Page
+--------------------------------------------------------------*/
+.customers{
+   height: 100%;
+}
+.customers .card{
+   border-radius: 0;
+   background-color: #EFEFEF;
+   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(0, 0, 0, 0.15) 0px 0px 0px 1px;
+   border: none;
+}
+.customers .card .card-header{
+   background-color: #CC6414;
+   border-radius: 0;
+   color: #FAFAFA;
+}
+.customers .card-table{
+   overflow: auto;
+}
+.customers .card-table table{
+   width: 100%;
+}
+.customers .card-table table tr{
+   transition: .2s;
+   border: 1px solid #D4D4D4;
+}
+.customers table th, td{
+   white-space: nowrap;
+   color: #1B3B1A;
+}
+.customers table th{
+   background-color: #D4D4D4;
+   padding: 7px 15px;
+}
+.customers table td{
+   padding: 7px 15px;
+}
+.customers table tr:hover{
+   background-color: #F5F5F5;
+}
+.customers table td a{
+   text-decoration: none;
+   color: #1B3B1A;
+   font-weight: 600;
+   font-size: 18px;
+}
+.customers .card table .pro-img{
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   overflow: hidden;
+}
+.customers .card table .pro-img img{
+   width: 100%;
+   height: 100%;
+}
+
+/*--------------------------------------------------------------
+# Account page
+--------------------------------------------------------------*/
+.account{
+   height: 100%;
+}
+.account .card{
+   border-radius: 0;
+   background-color: #EFEFEF;
+   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(0, 0, 0, 0.15) 0px 0px 0px 1px;
+   border: none;
+}
+.account .card .card-header{
+   background-color: #CC6414;
+   border-radius: 0;
+   color: #FAFAFA;
+}
+.account .card .card-header p{
+   color: #FAFAFA;
+}
+.account .nav-tabs{
+   display: flex;
+   justify-content: space-around;
+}
+.account .nav-tabs button{
+   border: none;
+   color: #0C58AC;
+   padding: 10px;
+   font-weight: 600;
+}
+.account .nav-tabs button:hover{
+   color: #1C72CE;
+}
+.account .nav-tabs button.active{
+   background: none;
+   color: #1C72CE;
+   border-bottom: 2px solid #1C72CE;
+}
+.account .card-body form .details-form{
+   width: 90%;
+   margin: 20px auto;
+}
+.account .card-body form .details-form label{
+   margin-top: 10px;
+   margin-left: 5px;
+   color: #1B3B1A;
+}
+.account .card-body form .details-form input{
+   border-radius: 0;
+   background-color: #FAFAFA;
+}
+.account .card-body form .details-form input:focus{
+   border: 1px solid #0C58AC;
+   box-shadow: 0 0 0 0.15rem #a8cbeb;
+}
+.account .card-body form .details-form .submit-butt input{
+   border: none;
+   background-color: #0C58AC;
+   color: #FAFAFA;
+   font-weight: 600;
+   padding: 5px 20px;
+   transition: .3s;
+}
+.account .card-body form .details-form .submit-butt input:hover{
+   background-color: #1C72CE;
+}
+.account .card-body .dropdown button{
+   border: none;
+   background-color: #FAFAFA;
+   font-weight: 600;
+   font-size: 20px;
+   color: #1B3B1A;
+}
+.account .card-body .dropdown .dropdown-menu{
+   background-color: #FAFAFA;
+   border-radius: 0;
+}
+.account .card-body .dropdown .dropdown-menu a{
+   transition: .3s;
+   padding: 7px;
+}
+.account .card-body .dropdown .dropdown-menu a:hover{
+   background-color: #EFEFEF;
+}
+.account .card-body .edit-img{
+   width: 120px;
+   height: 120px;
+   overflow: hidden;
+}
+.account .card-body .edit-img img{
+   height: 100%;
+   width: 100%;
+}
+.account .card-body .upload-img label{
+   font-weight: 600;
+   color: #1B3B1A;
+}
+.account .card-body .upload-img input[type=submit]{
+   border: none;
+   background-color: #0C58AC;
+   color: #FAFAFA;
+   padding: 5px 20px;
+   font-weight: 600;
+   transition: .3s;
+}
+.account .card-body .change-password .pass-details{
+   width: 90%;
+   margin: auto;
+}
+.account .card-body .change-password label{
+   color: #1B3B1A;
+   margin-top: 10px;
+   margin-left: 5px;
+}
+.account .card-body .change-password input{
+   border-radius: 0;
+   background-color: #FAFAFA;
+}
+.account .card-body .change-password input:focus{
+   border: 1px solid #0C58AC;
+   box-shadow: 0 0 0 0.15rem #a8cbeb;
+}
+.account .card-body .change-password input[type=checkbox]:checked{
+   background-color: #0C58AC;
+}
+.account .card-body .change-password input[type=submit]{
+   border: none;
+   background-color: #0C58AC;
+   color: #FAFAFA;
+   font-weight: 600;
+   padding: 5px 20px;
+   transition: .3s;
+}
+.account .card-body .change-password input[type=submit]:hover{
+   background-color: #1C72CE;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.footer {
+   padding: 20px 0;
+   transition: all 0.3s;
+}
+
+/*--------------------------------------------------------------
+# Modals
+--------------------------------------------------------------*/
+.modal-content{
+   border-radius: 0;
+   border: none;
+   background-color: #FAFAFA;
+}
+.modal-content .modal-body h5, p{
+   color: #1B3B1A;
+   font-weight: 600;
+}
+.modal-content .modal-body .dropdown .dropdown-menu{
+   background-color: #FAFAFA;
+   border-radius: 0;
+}
+.modal-content .modal-body .dropdown .dropdown-menu a{
+   transition: .3s;
+   padding: 7px;
+}
+.modal-content .modal-body .dropdown .dropdown-menu a:hover{
+   background-color: #EFEFEF;
+}
+
+/*product upload*/
+.modal-content .upload_modal form .img-upload input{
+   border: none;
+   background-color: #0C58AC;
+   font-weight: 600;
+   font-size: 15px;
+   padding: 5px 15px;
+   color: #FAFAFA;
+   transition: .3s;
+}
+.modal-content .upload_modal form .img-upload input:hover{
+   background-color: #1C72CE;
+}
+.modal-content .upload_modal form .input-box textarea,
+.modal-content .upload_modal form .input-box input{
+   border-radius: 0;
+   padding: 7px;
+   background-color: #FAFAFA;
+}
+.modal-content .upload_modal form .input-box textarea:focus,
+.modal-content .upload_modal form .input-box input:focus{
+   border: 1px solid #0C58AC;
+   box-shadow: 0 0 0 0.15rem #a8cbeb;
+}
+.modal-content .upload_modal form .button input{
+   font-weight: 600;
+   font-size: 18px;
+   background: none;
+   border: none;
+   color: #0C58AC;
+}
+.modal-content .upload_modal form .button input[type=button]{
+   color: #CC6414;
+}
+.modal-content .upload_modal form .button input:hover{
+   color: #1C72CE;
+}
+.modal-content .upload_modal form .button input[type=button]{
+   color: #E27C22;
+}
+
+/*modal payment method*/
+.modal-content .pm_modals .nav-tabs{
+   display: flex;
+   justify-content: space-around;
+}
+.modal-content .pm_modals .nav-tabs button{
+   border: none;
+   color: #0C58AC;
+   padding: 10px;
+   font-weight: 600;
+}
+.modal-content .pm_modals .nav-tabs button:hover{
+   color: #1C72CE;
+}
+.modal-content .pm_modals .nav-tabs button.active{
+   background: none;
+   color: #1C72CE;
+   border-bottom: 2px solid #1C72CE;
+}
+.modal-content .pm_modals .tab-content .edit input,
+.modal-content .pm_modals .tab-content .add input{
+   border-radius: 0;
+   background-color: #FAFAFA;
+}
+.modal-content .pm_modals .tab-content .edit input:focus,
+.modal-content .pm_modals .tab-content .add input:focus{
+   border: 1px solid #0C58AC;
+   box-shadow: 0 0 0 0.15rem #A8CBEB;
+}
+.modal-content .pm_modals .tab-content .edit .edit-buttons input{
+   border: none;
+   margin-left: 5px;
+   margin-top: 5px;
+   padding: 2px 7px;
+   transition: .3s;
+}
+.modal-content .pm_modals .tab-content .edit .edit-buttons .edit-submit{
+   background-color: #0C58AC;
+   color: #FAFAFA;
+}
+.modal-content .pm_modals .tab-content .edit .edit-buttons .delete-submit{
+   background-color: #CC6414;
+   color: #FAFAFA;
+}
+.modal-content .pm_modals .tab-content .edit .edit-buttons .edit-submit:hover{
+   background-color: #1C72CE;
+}
+.modal-content .pm_modals .tab-content .edit .edit-buttons .delete-submit:hover{
+   background-color: #E27C22;
+}
+.modal-content .pm_modals form .button input{
+   font-weight: 600;
+   font-size: 18px;
+   background: none;
+   border: none;
+   color: #0C58AC;
+}
+.modal-content .pm_modals form .button input[type=button]{
+   color: #CC6414;
+}
+.modal-content .pm_modals form .button input:hover{
+   color: #1C72CE;
+}
+.modal-content .pm_modals form .button input[type=button]{
+   color: #E27C22;
+}
+
+/*orders modal*/
+.modal-content .admin_orders h5, h6{
+   color: #1B3B1A;
+}
+.modal-content .admin_orders .status{
+   color: #CC6414;
+}
+.modal-content .admin_orders p{
+   font-weight: 600;
+   color: #5D5D5D;
+}
+.modal-content .admin_orders input{
+   border: none;
+   padding: 5px 15px;
+   transition: .3s;
+}
+.modal-content .admin_orders input[type=submit]{
+   background-color: #0C58AC;
+   color: #FAFAFA;
+}
+.modal-content .admin_orders input[type=button]{
+   background-color: #CC6414;
+   color: #FAFAFA;
+}
+.modal-content .admin_orders input[type=submit]:hover{
+   background-color: #1C72CE;
+}
+.modal-content .admin_orders input[type=button]:hover{
+   background-color: #E27C22;
+}
+.modal-content .admin_orders .mess_cust{
+   background-color: #0CAC41 !important;
+   color: #FAFAFA !important;
+   cursor: pointer;
+}
+.modal-content .admin_orders .mess_cust:hover{
+   background-color: #0FBB48 !important;
+}
+
+/*send message*/
+.modal-content .send_messages p{
+   color: #0C58AC;
+}
+.modal-content .send_messages textarea,
+.modal-content .send_messages input{
+   border-radius: 0;
+   background: transparent;
+}
+.modal-content .send_messages textarea:focus,
+.modal-content .send_messages input:focus{
+   border: 1px solid #0C58AC;
+   box-shadow: 0 0 0 0.15rem #a8cbeb;
+}
+.modal-content .send_messages .button input{
+   border: none;
+   background: none;
+   font-size: 18px;
+   font-weight: 600;
+}
+.modal-content .send_messages .button input[type=submit]{
+   color: #0C58AC;
+}
+.modal-content .send_messages .button input[type=button]{
+   color: #CC6414;
+}
+
+/*Update product*/
+.modal-content .product_edit input[type=submit]{
+   background-color: #0C58AC;
+   color: #FAFAFA;
+   border: none;
+   font-weight: 600;
+   padding: 4px 15px 5px;
+   transition: .3s;
+}
+.modal-content .product_edit .dots button{
+   border: none;
+   background: none;
+   color: #1B3B1A;
+   font-size: 22px;
+}
+.modal-content .product_edit textarea,
+.modal-content .product_edit input{
+   border-radius: 0;
+   background: transparent;
+}
+.modal-content .product_edit textarea:focus,
+.modal-content .product_edit input:focus{
+   border: 1px solid #0C58AC;
+   box-shadow: 0 0 0 0.15rem #a8cbeb;
+}
+.modal-content .product_edit input[type=button]{
+   background-color: #CC6414;
+   color: #FAFAFA;
+   border: none;
+   font-weight: 600;
+   padding: 4px 15px 5px;
+   transition: .3s;
+}
+.modal-content .product_edit input[type=submit]:hover{
+   background-color: #1C72CE;
+}
+.modal-content .product_edit input[type=button]:hover{
+   background-color: #E27C22;
+}
+
+/*Message view*/
+.modal-content .view_message h5{
+   color: #5D5D5D;
+}
+.modal-content .view_message p{
+   color: #5D5D5D;
+}
+.modal-content .view_message p strong{
+   color: #0C58AC;
+}
+.modal-content .view_message .message{
+   color: #1B3B1A;
+   font-weight: 500;
+}
+.modal-content .view_message input{
+   border: none;
+   background-color: #0C58AC;
+   color: #FAFAFA;
+   padding: 3px 15px 4px;
+   font-weight: 600;
+   transition: .3s;
+}
+
+/*customer modal*/
+.modal-content .cust_details h5, h6{
+   color: #1B3B1A;
+}
+.modal-content .cust_details .status{
+   color: #CC6414;
+}
+.modal-content .cust_details p{
+   font-weight: 600;
+   color: #5D5D5D;
+}
+.modal-content .cust_details input{
+   border: none;
+   padding: 5px 15px;
+   transition: .3s;
+}
+.modal-content .cust_details .delete_cust{
+   background-color: #0C58AC;
+   color: #FAFAFA;
+}
+.modal-content .cust_details input{
+   background-color: #CC6414;
+   color: #FAFAFA;
+}
+.modal-content .cust_details .delete_cust:hover{
+   background-color: #1C72CE;
+}
+.modal-content .cust_details input:hover{
+   background-color: #E27C22;
+}
+.modal-content .cust_details .mess_cust{
+   background-color: #0CAC41 !important;
+   color: #FAFAFA;
+   cursor: pointer;
+}
+.modal-content .cust_details .mess_cust:hover{
+   background-color: #0FBB48 !important;
+}
+
+/*--------------------------------------------------------------
+# Admin Log in Page
+--------------------------------------------------------------*/
+.login-admin .logo{
+   text-decoration: none;
+   color: #0C58AC;
+}
+.login-admin .card .card-title{
+   font-weight: 600;
+}
+.login-admin .card{
+   background-color: #EFEFEF;
+   border-radius: 0;
+   border: none;
+   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.login-admin .card form .input-box label{
+   color: #1B3B1A;
+   margin-left: 5px;
+}
+.login-admin .card form .input-box input{
+   border-radius: 0;
+   padding: 7px;
+   background-color: #FAFAFA;
+}
+.login-admin .card form .input-box input:focus{
+   border: 1px solid #0C58AC;
+   box-shadow: 0 0 0 0.15rem #a8cbeb;
+}
+.login-admin .card form .input-box input[type=checkbox]:checked{
+   background-color: #0C58AC;
+}
+.login-admin .card form .show-pass{
+   color: #1B3B1A;
+}
+.login-admin .card form .submit-butt input{
+   background-color: #0C58AC;
+   color: #FAFAFA;
+   padding: 7px;
+   border: none;
+   transition: .4s;
+}
+.login-admin .card form .submit-butt input:hover{
+   background-color: #1C72CE;
+}
+.login-admin .card h5, p{
+   color: #1B3B1A;
+}
+.login-admin .card .link-signup{
+   color: #F48424;
+   text-decoration: none;
+}
